@@ -1,11 +1,8 @@
 {
-  "name": "react-imitation",
+  "name": "daewon9-react-imitation",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "publishConfig": {
-    "access": "public"
-  },
   "scripts": {
     "build": "tsup"
   },
