@@ -28,12 +28,14 @@ export function setAttributes(
 
       // 'key' 속성은 무시
       if (tmpPropName === 'key') {
-        $el.innerHTML = propValue;
         continue;
       }
-
+      // ref 속성일 경우 생성된 엘리먼트 주입
+      else if (tmpPropName === 'ref') {
+        (props as DOMAttribute).ref!.current! = $el;
+      }
       // className 속성 처리
-      if (propName === 'className') {
+      else if (propName === 'className') {
         const newClassName = makeClassName(propValue);
         if ($el.className !== newClassName) {
           $el.className = newClassName; // 클래스명이 변경된 경우 업데이트
